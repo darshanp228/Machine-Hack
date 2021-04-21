@@ -11,34 +11,20 @@ from sklearn.model_selection import train_test_split
 from Preprocessing import PreProcessing
 import category_encoders as ce
 
-# Importing the dataset
+# Importing the Trainging dataset
 dataset = pd.read_csv('Train.csv')
-
-
-# Standard Scaling Price
-#from sklearn.preprocessing import StandardScaler
-#scaled_features = dataset.copy()
-#col_names = ['price']
-#features = scaled_features[col_names]
-#price_scaler = StandardScaler().fit(features.values)
-#features = price_scaler.transform(features.values)
-#scaled_features[col_names] = features
-#dataset = scaled_features
-
 X_train = dataset.iloc[:, :-1].values
 y_train = dataset.iloc[:, 8].values
-#X = dataset.iloc[:, :-1].values
-#y = dataset.iloc[:, 8].values
 
-
+# Importing the Testging dataset
 dataset = pd.read_csv('Test.csv')
 X_test = dataset.iloc[:, :-1].values
 
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-
+#Preprocess Train data
 X_train = pd.DataFrame(X_train)
 X_train = PreProcessing(X_train)
 
+#Preprocess Test data
 X_test = pd.DataFrame(X_test)
 X_test = PreProcessing(X_test)
 
