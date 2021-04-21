@@ -81,18 +81,4 @@ for i in range(data.shape[0]):
     if re.findall("[a-zA-Z]", data.iloc[i, 5]):
         lst.append(data.iloc[i, 5])
 x = list(set(lst))
-#
-#sqft = acres * 43560
-#sqft = cents * 435.6
-#sqft = perch * 272.25
-#sqft = sqmt * 10.7639
-#sqft = sqyd * 9
-#sqft = ground * 2400
-#sqft = guntha * 1089 
-#Acres
-#Cents
-#Perch
-#Sq. Meter
-#Sq. Yards
-#Grounds
-#Guntha
+
